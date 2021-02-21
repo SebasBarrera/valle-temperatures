@@ -26,7 +26,14 @@ namespace ValleTemperatures
             MarkersOverlay = new GMapOverlay("markers");
         }
 
-        
+        private void SetMarkers()
+        {
+            foreach (PointLatLng m in Markers)
+            {
+
+
+            }
+        }
         
         private void Form2_Load(object sender, EventArgs e)
         {
