@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Record;
 
 namespace ValleTemperatures.model
 {
@@ -11,11 +13,15 @@ namespace ValleTemperatures.model
 
         List<Record> Records;
         Hashtable promedioTemperaturaPorMunicipio;
+        Hashtable cantidadZonaHidrografica;
+        Hashtable cantidadSensoresPorMunicipio;
 
         public Controller()
         {
             Records = new List<Record>();
             promedioTemperaturaPorMunicipio = new Hashtable();
+            cantidadZonaHidrografica = new Hashtable();
+            cantidadSensoresPorMunicipio = new Hashtable();
         }
 
         
@@ -23,6 +29,10 @@ namespace ValleTemperatures.model
         public void AddRecord(Record rec)
         {
             Records.Add(rec);
+            if (!openWith.ContainsKey(rec))
+            {
+
+            }
             
         }
 

@@ -24,7 +24,7 @@ namespace ValleTemperatures.model
             Centi = centi;
         }
 
-        public string Cod{ get; set; }
+        public string Cod { get; set; }
         public string Sensor{ get; set; }
         public string Fecha{ get; set; }
         public double Temperatura{ get; set; }

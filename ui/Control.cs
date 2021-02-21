@@ -12,13 +12,13 @@ namespace ValleTemperatures.ui
     class Control
     {
 
-        const string PATH = "";
+        const string PATH = "../data/dataset.csv";
 
-        private Hashtable contenedora;
+        
 
-        private readonly Controller c = new Controller();
+        private Controller c = new Controller();
 
-        public /*¿*/ void /* ? */ LoadData()
+        public void LoadData()
         {
 
             string[] lines = File.ReadAllLines(PATH);
@@ -31,6 +31,9 @@ namespace ValleTemperatures.ui
                 if (initial1stWord != 'c')
                 {
                     Record newRecord = new Record(values[0], values[1], values[2], Convert.ToDouble(values[3]), values[4], values[5], values[6], values[7], Convert.ToDouble(values[8]), Convert.ToDouble(values[8]), values[10], values[11]);
+                    c.AddRecord(newRecord);
+                    
+
                 }
             }
         }
