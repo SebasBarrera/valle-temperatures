@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\Record.cs" />
     <Compile Include="ui\Control.cs" />
     <Compile Include="ui\ChartShow.cs">
       <SubType>Form</SubType>

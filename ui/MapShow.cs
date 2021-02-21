@@ -1,6 +1,7 @@
 ﻿using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,21 +20,32 @@ namespace ValleTemperatures
         private List<PointLatLng> Markers;
         private GMapOverlay MarkersOverlay;
 
-        public MapShow()
+        public MapShow(List<double[]> marks)
         {
             InitializeComponent();
             Markers = new List<PointLatLng>();
             MarkersOverlay = new GMapOverlay("markers");
+            addMarkersToList(marks);
+        }
+
+        private void addMarkersToList(List<double[]> marks)
+        {
+            foreach (double[] i  in marks)
+            {
+                PointLatLng m = new PointLatLng(i[0], i[1]);
+            }
         }
 
         private void SetMarkers()
         {
             foreach (PointLatLng m in Markers)
             {
-
-
+                GMapMarker marker = new GMarkerGoogle(m, GMarkerGoogleType.red_dot);
+                MarkersOverlay.Markers.Add(marker);
             }
         }
+
+
         
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -43,6 +55,7 @@ namespace ValleTemperatures
         private void Cerrar(object sender, EventArgs e)
         {
             this.Hide();
+            Markers.Clear();
         }
 
         private void GMap_Load(object sender, EventArgs e)
@@ -52,6 +65,33 @@ namespace ValleTemperatures
 
             gmap.Position = new PointLatLng(3.416667, -76.516667);
             gmap.Overlays.Add(MarkersOverlay);
+
+        }
+
+        private void ocultar(object sender, EventArgs e)
+        {
+            if (MarkersOverlay.IsVisibile == false)
+            {
+                MessageBox.Show("Ya has ocultado los puntos!");
+            }
+            else
+            {
+                MessageBox.Show("Has ocultado los puntos.");
+                MarkersOverlay.IsVisibile = false;
+            }
+        }
+
+        private void mostrar(object sender, EventArgs e)
+        {
+            if (MarkersOverlay.IsVisibile == true)
+            {
+                MessageBox.Show("Los puntos ya estan en pantalla!");
+            }
+            else
+            {
+                MessageBox.Show("Has mostrado los puntos.");
+                MarkersOverlay.IsVisibile = true;
+            }
         }
     }
 }
