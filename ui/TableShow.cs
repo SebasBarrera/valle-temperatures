@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ValleTemperatures.ui;
+using Control = ValleTemperatures.ui.Control;
 
 namespace ValleTemperatures
 {
     public partial class TableShow : Form
     {
+        private readonly Control c = new Control();
         public TableShow()
         {
             InitializeComponent();
@@ -35,7 +37,8 @@ namespace ValleTemperatures
         {
             MessageBox.Show("Se han generado las graficas");
 
-            ChartShow chart = new ChartShow();
+
+            ChartShow chart = new ChartShow(c.RetrieveTempData(), c.RetrieveZonaData(), c.RetrieveCantidadData());
             chart.Show();
         }
     }

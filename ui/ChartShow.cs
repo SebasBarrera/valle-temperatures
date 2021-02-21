@@ -24,30 +24,30 @@ namespace ValleTemperatures.ui
             chart2.Series["pie"].IsValueShownAsLabel = true;
             chart3.Series["barras"].IsValueShownAsLabel = true;
 
-            punto(info1);
-            pie(info2);
-            barra(info3);
+            Punto(info1);
+            Pie(info2);
+            Barra(info3);
 
             chart1.Series["puntos"].Points.AddXY("");
             chart2.Series["pie"].Points.AddXY("");
             chart3.Series["barras"].Points.AddXY("");
         }
 
-        private void punto(List<string[]> info) //info[0] temperatura, info[1] municipio
+        private void Punto(List<string[]> info) //info[0] temperatura, info[1] municipio
         {
             foreach (string[] i in info)
             {
                 chart1.Series["puntos"].Points.AddXY(i[1], i[0]);
             }
         }
-        private void pie(List<string[]> info) //info[0] cantidad, info[1] Zona Hidrografica
+        private void Pie(List<string[]> info) //info[0] cantidad, info[1] Zona Hidrografica
         {
             foreach (string[] i in info)
             {
                 chart2.Series["pie"].Points.AddXY(i[1], i[0]);
             }
         }
-        private void barra(List<string[]> info) //info[0] cantidad, info[1] municipio
+        private void Barra(List<string[]> info) //info[0] cantidad, info[1] municipio
         {
             foreach (string[] i in info)
             {
@@ -60,12 +60,12 @@ namespace ValleTemperatures.ui
 
         }
 
-        private void chart2_Click(object sender, EventArgs e)
+        private void Chart2_Click(object sender, EventArgs e)
         {
 
         }
 
-         private void button1_Click(object sender, EventArgs e)
+         private void Button_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

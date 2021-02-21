@@ -81,7 +81,7 @@ namespace ValleTemperatures.ui
             this.chart2.Size = new System.Drawing.Size(300, 300);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
-            this.chart2.Click += new System.EventHandler(this.chart2_Click);
+            this.chart2.Click += new System.EventHandler(this.Chart2_Click);
             // 
             // chart3
             // 
@@ -107,7 +107,7 @@ namespace ValleTemperatures.ui
             this.button1.TabIndex = 3;
             this.button1.Text = "cerrar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button_Click);
             // 
             // ChartShow
             // 

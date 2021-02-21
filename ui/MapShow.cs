@@ -21,5 +21,10 @@ namespace ValleTemperatures
         {
 
         }
+
+        private void Cerrar(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
