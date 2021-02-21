@@ -9,6 +9,24 @@ namespace ValleTemperatures.model
     class Controller
     {
 
+        List<Record> Records;
+        Hashtable promedioTemperaturaPorMunicipio;
+
+        public Controller()
+        {
+            Records = new List<Record>();
+            promedioTemperaturaPorMunicipio = new Hashtable();
+        }
+
+        
+
+        public void AddRecord(Record rec)
+        {
+            Records.Add(rec);
+            
+        }
+
+
 
 
         public List<string[]> CandidadMunicipio()
