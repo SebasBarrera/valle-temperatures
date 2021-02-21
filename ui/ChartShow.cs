@@ -12,7 +12,7 @@ namespace ValleTemperatures.ui
 {
     public partial class ChartShow : Form
     {
-        public ChartShow(List<string[]> info)
+        public ChartShow(List<string[]> info1, List<string[]> info2, List<string[]> info3) // info1 temperatura por municipio, info2 zona hidrografica, info3 cantidad sensores por municipio
         {
             InitializeComponent();
 
@@ -24,18 +24,35 @@ namespace ValleTemperatures.ui
             chart2.Series["pie"].IsValueShownAsLabel = true;
             chart3.Series["barras"].IsValueShownAsLabel = true;
 
-            foreach (string[] i in info)
-            {
-                int mun = Convert.ToInt32(i[0]);
-                if (mun > 10)
-                {
-
-                }
-            }
+            punto(info1);
+            pie(info2);
+            barra(info3);
 
             chart1.Series["puntos"].Points.AddXY("");
             chart2.Series["pie"].Points.AddXY("");
             chart3.Series["barras"].Points.AddXY("");
+        }
+
+        private void punto(List<string[]> info) //info[0] temperatura, info[1] municipio
+        {
+            foreach (string[] i in info)
+            {
+                chart1.Series["puntos"].Points.AddXY(i[1], i[0]);
+            }
+        }
+        private void pie(List<string[]> info) //info[0] cantidad, info[1] Zona Hidrografica
+        {
+            foreach (string[] i in info)
+            {
+                chart2.Series["pie"].Points.AddXY(i[1], i[0]);
+            }
+        }
+        private void barra(List<string[]> info) //info[0] cantidad, info[1] municipio
+        {
+            foreach (string[] i in info)
+            {
+                chart3.Series["barras"].Points.AddXY(i[1], i[0]);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -53,18 +53,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ui\table.cs">
+    <Compile Include="ui\Control.cs" />
+    <Compile Include="ui\ChartShow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ui\table.Designer.cs">
-      <DependentUpon>table.cs</DependentUpon>
+    <Compile Include="ui\ChartShow.Designer.cs">
+      <DependentUpon>ChartShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MapShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\MapShow.Designer.cs">
+      <DependentUpon>MapShow.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Controller.cs" />
-    <Compile Include="ui\Interface.cs">
+    <Compile Include="ui\TableShow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ui\Interface.Designer.cs">
-      <DependentUpon>Interface.cs</DependentUpon>
+    <Compile Include="ui\TableShow.Designer.cs">
+      <DependentUpon>TableShow.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,11 +84,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ui\Interface.resx">
-      <DependentUpon>Interface.cs</DependentUpon>
+    <EmbeddedResource Include="ui\ChartShow.resx">
+      <DependentUpon>ChartShow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ui\table.resx">
-      <DependentUpon>table.cs</DependentUpon>
+    <EmbeddedResource Include="ui\TableShow.resx">
+      <DependentUpon>TableShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\MapShow.resx">
+      <DependentUpon>MapShow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
