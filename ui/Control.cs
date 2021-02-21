@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ValleTemperatures.model
+namespace ValleTemperatures.ui
 {
-    class Controller
+    class Control
     {
+
     }
 }

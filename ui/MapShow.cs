@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ValleTemperatures
 {
-    public partial class Form1 : Form
+    public partial class MapShow : Form
     {
-        public Form1()
+        public MapShow()
         {
             InitializeComponent();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
