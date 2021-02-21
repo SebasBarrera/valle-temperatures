@@ -9,6 +9,8 @@ namespace ValleTemperatures.model
     class Controller
     {
 
+
+
         public List<string[]> CandidadMunicipio()
         {
             List<string[]> datos = new List<string[]>();
