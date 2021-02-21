@@ -12,7 +12,7 @@ namespace ValleTemperatures.ui
 {
     public partial class ChartShow : Form
     {
-        public ChartShow()
+        public ChartShow(List<string[]> info)
         {
             InitializeComponent();
 
@@ -23,6 +23,15 @@ namespace ValleTemperatures.ui
             chart1.Series["puntos"].IsValueShownAsLabel = true;
             chart2.Series["pie"].IsValueShownAsLabel = true;
             chart3.Series["barras"].IsValueShownAsLabel = true;
+
+            foreach (string[] i in info)
+            {
+                int mun = Convert.ToInt32(i[0]);
+                if (mun > 10)
+                {
+
+                }
+            }
 
             chart1.Series["puntos"].Points.AddXY("");
             chart2.Series["pie"].Points.AddXY("");
