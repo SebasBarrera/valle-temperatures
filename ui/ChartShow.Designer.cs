@@ -60,9 +60,9 @@ namespace ValleTemperatures.ui
             series1.Legend = "Legend1";
             series1.Name = "puntos";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.Size = new System.Drawing.Size(642, 300);
             this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chart1.Text = "Temperatura promedio por municipio";
             // 
             // chart2
             // 
@@ -70,7 +70,7 @@ namespace ValleTemperatures.ui
             this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(318, 47);
+            this.chart2.Location = new System.Drawing.Point(660, 47);
             this.chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -80,7 +80,7 @@ namespace ValleTemperatures.ui
             this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(300, 300);
             this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
+            this.chart2.Text = "Cantidad de municipios por zona hidrografica";
             this.chart2.Click += new System.EventHandler(this.Chart2_Click);
             // 
             // chart3
@@ -89,19 +89,19 @@ namespace ValleTemperatures.ui
             this.chart3.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.chart3.Legends.Add(legend3);
-            this.chart3.Location = new System.Drawing.Point(624, 47);
+            this.chart3.Location = new System.Drawing.Point(966, 47);
             this.chart3.Name = "chart3";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
             series3.Name = "barras";
             this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(300, 300);
+            this.chart3.Size = new System.Drawing.Size(642, 300);
             this.chart3.TabIndex = 2;
-            this.chart3.Text = "chart3";
+            this.chart3.Text = "Cantidad de registros de temperatura por municipio";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(404, 388);
+            this.button1.Location = new System.Drawing.Point(740, 376);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 34);
             this.button1.TabIndex = 3;
@@ -113,7 +113,7 @@ namespace ValleTemperatures.ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 443);
+            this.ClientSize = new System.Drawing.Size(1630, 443);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chart3);
             this.Controls.Add(this.chart2);

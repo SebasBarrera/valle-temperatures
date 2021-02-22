@@ -44,10 +44,14 @@ namespace ValleTemperatures
 
                     if (absolutePathFile.Contains(".csv"))
                     {
+                        
                         List<string[]> rowsDvg = c.LoadData(absolutePathFile);
+                       
                         dgv.AllowUserToAddRows = false;
                         showGrid(rowsDvg);
-                       
+                        this.Show();
+                        this.BringToFront();
+
                     }
                     else
                     {
@@ -132,6 +136,21 @@ namespace ValleTemperatures
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnMunicipio_Click(object sender, EventArgs e)
+        {
+            //TODO GONZALO
+        }
+
+        private void btnZona_Click(object sender, EventArgs e)
+        {
+            //TODO GONZALO
+        }
+
+        private void btnTemperaturas_Click(object sender, EventArgs e)
+        {
+            //TODO GONZALO
         }
     }
 }

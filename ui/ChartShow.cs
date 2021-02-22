@@ -16,9 +16,9 @@ namespace ValleTemperatures.ui
         {
             InitializeComponent();
 
-            chart1.Titles.Add("grafico de puntos");
-            chart2.Titles.Add("grafico circular");
-            chart1.Titles.Add("grafico de barras");
+            chart1.Titles.Add("Temperatura promedio por municipio");
+            chart2.Titles.Add("Cantidad de municipios por zona hidrografica");
+            chart1.Titles.Add("Cantidad de registros de temperatura por municipio");
 
             chart1.Series["puntos"].IsValueShownAsLabel = true;
             chart2.Series["pie"].IsValueShownAsLabel = true;
@@ -28,30 +28,48 @@ namespace ValleTemperatures.ui
             Pie(info2);
             Barra(info3);
 
-            chart1.Series["puntos"].Points.AddXY("");
-            chart2.Series["pie"].Points.AddXY("");
-            chart3.Series["barras"].Points.AddXY("");
+            //chart1.Series["puntos"].Points.AddXY("");
+            //chart2.Series["pie"].Points.AddXY("");
+            //chart3.Series["barras"].Points.AddXY("");
         }
 
         private void Punto(List<string[]> info) //info[0] temperatura, info[1] municipio
         {
+            int count = 1;
             foreach (string[] i in info)
             {
-                chart1.Series["puntos"].Points.AddXY(i[1], i[0]);
+                if (count == 1)
+                {
+                    MessageBox.Show("Temperatura promedio por municipio" + i[1] + i[0]);
+                    count++;
+                }
+                chart1.Series["puntos"].Points.AddXY(i[0], i[1]);
             }
         }
         private void Pie(List<string[]> info) //info[0] cantidad, info[1] Zona Hidrografica
         {
+            int count = 1;
             foreach (string[] i in info)
             {
-                chart2.Series["pie"].Points.AddXY(i[1], i[0]);
+                if (count == 1)
+                {
+                    MessageBox.Show("Cantidad de municipios por zona hidrografica" + i[1] + i[0]);
+                    count++;
+                }
+                chart2.Series["pie"].Points.AddXY(i[0], i[1]);
             }
         }
         private void Barra(List<string[]> info) //info[0] cantidad, info[1] municipio
         {
+            int count = 1;
             foreach (string[] i in info)
             {
-                chart3.Series["barras"].Points.AddXY(i[1], i[0]);
+                if (count == 1)
+                {
+                    MessageBox.Show("Cantidad de registros de temperatura por municipio" + i[1] + i[0]);
+                    count++;
+                }
+                chart3.Series["barras"].Points.AddXY(i[0], i[1]);
             }
         }
 

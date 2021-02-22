@@ -88,6 +88,7 @@ namespace ValleTemperatures.model
                 double[] cor = new double[2];
                 cor[0] = Records.ElementAt(i).Lat;
                 cor[1] = Records.ElementAt(i).Lon;
+                
                 datos.Add(cor);
             }
             return datos;
@@ -96,7 +97,14 @@ namespace ValleTemperatures.model
         public List<string[]> CandidadMunicipio()
         {
             List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in cantidadRegistrosPorMunicipio)
+            {
+                string[] dato = new string[2];
 
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
 
             return datos;
         }
@@ -104,7 +112,14 @@ namespace ValleTemperatures.model
         public List<string[]> TemperaturaCiudad()
         {
             List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in promedioTemperaturaPorMunicipio)
+            {
+                string[] dato = new string[2];
 
+                dato[0] = (string)i.Key;
+                dato[1] = i.Value + "";
+                datos.Add(dato);
+            }
 
             return datos;
         }
@@ -112,7 +127,14 @@ namespace ValleTemperatures.model
         public List<string[]> CantidadZona()
         {
             List<string[]> datos = new List<string[]>();
+            foreach (DictionaryEntry i in cantidadZonaHidrografica)
+            {
+                string[] dato = new string[2];
 
+                dato[0] = (string)i.Key;
+                dato[1] = "" + i.Value;
+                datos.Add(dato);
+            }
 
             return datos;
         }

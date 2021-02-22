@@ -23,7 +23,6 @@ namespace ValleTemperatures.ui
                  try
                  {
                      string[] lines = File.ReadAllLines(path);
-
                      for (int i = 0; i <5000; i++)
                      {
                          string[] values = lines[i].Split(','); 
@@ -34,7 +33,7 @@ namespace ValleTemperatures.ui
                  }
                  catch (Exception ex)
                  {
-                     MessageBox.Show("FAIL");
+                     MessageBox.Show("FAIL" + ex.StackTrace);
                  }
 
 
