@@ -13,14 +13,14 @@ namespace ValleTemperatures.model
         List<Record> Records;
         Hashtable promedioTemperaturaPorMunicipio;
         Hashtable cantidadZonaHidrografica;
-        Hashtable cantidadSensoresPorMunicipio;
+        Hashtable cantidadRegistrosPorMunicipio;
 
         public Controller()
         {
             Records = new List<Record>();
             promedioTemperaturaPorMunicipio = new Hashtable();
             cantidadZonaHidrografica = new Hashtable();
-            cantidadSensoresPorMunicipio = new Hashtable();
+            cantidadRegistrosPorMunicipio = new Hashtable();
         }
 
         
@@ -28,11 +28,55 @@ namespace ValleTemperatures.model
         public void AddRecord(Record rec)
         {
             Records.Add(rec);
-            if (!openWith.ContainsKey(rec))
-            {
 
+            int oneUnit = 1;
+            double[] arrayForAverage = {0,0};
+
+            if (promedioTemperaturaPorMunicipio.ContainsKey(rec.Mun))
+            {
+                //arrayForAverage[] = promedioTemperaturaPorMunicipio[rec.Mun];
+
+                object[] objArray= promedioTemperaturaPorMunicipio[rec.Mun] as object[];
+
+                if (objArray != null)
+                {
+                    arrayForAverage[] = objArray.OfType<double>().ToArray();
+
+                    arrayForAverage[0] = arrayForAverage[0] + rec.Temperatura;
+                    arrayForAverage[1] = arrayForAverage[1] + 1;
+                
+                    promedioTemperaturaPorMunicipio[rec.Mun] = arrayForAverage[];
+                }
+
+                
+            }
+            else
+            {
+                arrayForAverage[0] = rec.Temperatura;
+                arrayForAverage[1] = 1;
+                promedioTemperaturaPorMunicipio.Add(rec.Mun , arrayForAverage);
             }
             
+
+            if (cantidadZonaHidrografica.ContainsKey(rec.Zona))
+            {
+                cantidadZonaHidrografica[rec.Zona] = ((int) cantidadZonaHidrografica[rec.Zona]) + 1;
+            }
+            else
+            {
+                
+                cantidadZonaHidrografica.Add(rec.Zona, oneUnit);
+            }
+
+
+            if (cantidadRegistrosPorMunicipio.ContainsKey(rec.Mun))
+            {
+                 cantidadRegistrosPorMunicipio[rec.Mun] = ((int) cantidadRegistrosPorMunicipio[rec.Mun]) + 1;
+            }
+            else
+            {
+                cantidadRegistrosPorMunicipio.Add(rec.Mun, oneUnit);
+            }
         }
 
 
