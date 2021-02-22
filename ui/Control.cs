@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ValleTemperatures.model;
 
 namespace ValleTemperatures.ui
@@ -12,31 +13,37 @@ namespace ValleTemperatures.ui
     class Control
     {
 
-        const string PATH = "../data/dataset.csv";
-
+        public const string PATH = "C:\\Users\\Sebastián\\source\\repos\\ValleTemperatures\\ValleTemperatures\\data\\dataset.csv";
+        
         
 
         private Controller c = new Controller();
 
-        public void LoadData()
+        public List<string[]> LoadData(string path)
         {
+                 List<string[]> rowsList = new List<string[]>();
+                 try
+                 {
+                     string[] lines = File.ReadAllLines(path);
 
-            string[] lines = File.ReadAllLines(PATH);
+                     for (int i = 0; i < 5000; i++)
+                     {
+                         string[] values = lines[i].Split(','); 
+                         Record newRecord = new Record(values[0], values[1], values[2], Convert.ToDouble(values[3]), values[4], values[5], values[6], values[7], Convert.ToDouble(values[8]), Convert.ToDouble(values[9]), values[10], values[11]);
+                         c.AddRecord(newRecord);
+                         rowsList.Add(values);
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show("FAIL");
+                 }
 
-            foreach (string line in lines)
-            {
-                string[] values = line.Split(',');
-                string cod = values[0];
-                char initial1stWord = cod[0];
-                if (initial1stWord != 'c')
-                {
-                    Record newRecord = new Record(values[0], values[1], values[2], Convert.ToDouble(values[3]), values[4], values[5], values[6], values[7], Convert.ToDouble(values[8]), Convert.ToDouble(values[8]), values[10], values[11]);
-                    c.AddRecord(newRecord);
-                    
 
-                }
-            }
-        }
+                 return rowsList;
+         }
+
+
 
         public List<double[]> Coordenadas()
         {
