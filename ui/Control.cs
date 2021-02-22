@@ -38,6 +38,10 @@ namespace ValleTemperatures.ui
             }
         }
 
+        public List<double[]> Coordenadas()
+        {
+            return null;//TODO GONZALO
+        }
 
         public List<string[]> RetrieveTempData()
         {
