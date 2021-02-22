@@ -118,6 +118,7 @@ namespace ValleTemperatures.model
 
                 dato[0] = (string)i.Key;
                 dato[1] = i.Value + "";
+                Console.WriteLine(dato[1]);
                 datos.Add(dato);
             }
 

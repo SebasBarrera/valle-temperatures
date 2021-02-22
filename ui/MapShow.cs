@@ -40,7 +40,8 @@ namespace ValleTemperatures
         {
             foreach (PointLatLng m in Markers)
             {
-                GMapMarker marker = new GMarkerGoogle(m, GMarkerGoogleType.red_dot);
+                GMarkerGoogle gMarkerGoogle = new GMarkerGoogle(m, GMarkerGoogleType.red_dot);
+                GMapMarker marker = gMarkerGoogle;
                 MarkersOverlay.Markers.Add(marker);
             }
         }
