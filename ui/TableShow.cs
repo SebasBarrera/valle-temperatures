@@ -29,7 +29,7 @@ namespace ValleTemperatures
         {
             MessageBox.Show("Se ha generado el mapa con los sensores");
 
-            MapShow map = new MapShow();
+            MapShow map = new MapShow(c.Coordenadas());
             map.Show();
         }
 

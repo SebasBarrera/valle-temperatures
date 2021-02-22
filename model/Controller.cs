@@ -40,12 +40,12 @@ namespace ValleTemperatures.model
 
                 if (objArray != null)
                 {
-                    arrayForAverage[] = objArray.OfType<double>().ToArray();
+                    arrayForAverage = objArray.OfType<double>().ToArray();
 
                     arrayForAverage[0] = arrayForAverage[0] + rec.Temperatura;
                     arrayForAverage[1] = arrayForAverage[1] + 1;
                 
-                    promedioTemperaturaPorMunicipio[rec.Mun] = arrayForAverage[];
+                    promedioTemperaturaPorMunicipio[rec.Mun] = arrayForAverage;
                 }
 
                 
