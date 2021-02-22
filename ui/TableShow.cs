@@ -123,5 +123,15 @@ namespace ValleTemperatures
         {
 
         }
+
+        private void dgv_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

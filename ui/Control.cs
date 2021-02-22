@@ -12,8 +12,6 @@ namespace ValleTemperatures.ui
 {
     class Control
     {
-
-        public const string PATH = "C:\\Users\\Sebastián\\source\\repos\\ValleTemperatures\\ValleTemperatures\\data\\dataset.csv";
         
         
 
@@ -26,7 +24,7 @@ namespace ValleTemperatures.ui
                  {
                      string[] lines = File.ReadAllLines(path);
 
-                     for (int i = 0; i < 5000; i++)
+                     for (int i = 0; i <5000; i++)
                      {
                          string[] values = lines[i].Split(','); 
                          Record newRecord = new Record(values[0], values[1], values[2], Convert.ToDouble(values[3]), values[4], values[5], values[6], values[7], Convert.ToDouble(values[8]), Convert.ToDouble(values[9]), values[10], values[11]);
