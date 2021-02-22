@@ -34,6 +34,15 @@ namespace ValleTemperatures
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.MunicipioCombo = new System.Windows.Forms.ComboBox();
+            this.ZonaText = new System.Windows.Forms.TextBox();
+            this.numeroMin = new System.Windows.Forms.NumericUpDown();
+            this.numeroMax = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnMunicipio = new System.Windows.Forms.Button();
+            this.btnZona = new System.Windows.Forms.Button();
+            this.btnTemperaturas = new System.Windows.Forms.Button();
             this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,15 +55,6 @@ namespace ValleTemperatures
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MunicipioCombo = new System.Windows.Forms.ComboBox();
-            this.ZonaText = new System.Windows.Forms.TextBox();
-            this.numeroMin = new System.Windows.Forms.NumericUpDown();
-            this.numeroMax = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnMunicipio = new System.Windows.Forms.Button();
-            this.btnZona = new System.Windows.Forms.Button();
-            this.btnTemperaturas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroMax)).BeginInit();
@@ -102,66 +102,6 @@ namespace ValleTemperatures
             this.dgv.Size = new System.Drawing.Size(1245, 394);
             this.dgv.TabIndex = 3;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick_2);
-            // 
-            // Cod
-            // 
-            this.Cod.HeaderText = "Cod";
-            this.Cod.Name = "Cod";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Column11";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Column12";
-            this.Column12.Name = "Column12";
             // 
             // MunicipioCombo
             // 
@@ -260,6 +200,66 @@ namespace ValleTemperatures
             this.btnTemperaturas.Text = "Filtrar por intervalo de temperaturas";
             this.btnTemperaturas.UseVisualStyleBackColor = true;
             // 
+            // Cod
+            // 
+            this.Cod.HeaderText = "Codigo Estacion";
+            this.Cod.Name = "Cod";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Codigo Sensor";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Fecha Observacion";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Valor observado";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Nombre Estacion";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Departamento";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Municipio";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Zona Hidrografica";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Latitud";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Longitud";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Descripción Sensor";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Unidad Medida";
+            this.Column12.Name = "Column12";
+            // 
             // TableShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +295,15 @@ namespace ValleTemperatures
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.ComboBox MunicipioCombo;
+        private System.Windows.Forms.TextBox ZonaText;
+        private System.Windows.Forms.NumericUpDown numeroMin;
+        private System.Windows.Forms.NumericUpDown numeroMax;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnMunicipio;
+        private System.Windows.Forms.Button btnZona;
+        private System.Windows.Forms.Button btnTemperaturas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -307,15 +316,6 @@ namespace ValleTemperatures
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.ComboBox MunicipioCombo;
-        private System.Windows.Forms.TextBox ZonaText;
-        private System.Windows.Forms.NumericUpDown numeroMin;
-        private System.Windows.Forms.NumericUpDown numeroMax;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnMunicipio;
-        private System.Windows.Forms.Button btnZona;
-        private System.Windows.Forms.Button btnTemperaturas;
     }
 }
 
