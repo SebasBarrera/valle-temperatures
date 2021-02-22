@@ -38,5 +38,12 @@ namespace ValleTemperatures.model
         public string Centi{ get; set; }
 
 
+        public string[] TransformRecord2String()
+        {
+            string[] arrayRec = { Cod, Sensor, Fecha, Temperatura.ToString(), Estacion, Dep, Mun, Zona, Lat.ToString(), Lon.ToString(), Descrip, Centi };
+            return arrayRec;
+        }
+
+
     }
 }

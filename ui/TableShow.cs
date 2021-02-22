@@ -140,12 +140,40 @@ namespace ValleTemperatures
 
         private void btnMunicipio_Click(object sender, EventArgs e)
         {
-            //TODO GONZALO
+            string comboBoxText = MunicipioCombo.GetItemText(MunicipioCombo.SelectedItem);
+
+            if (comboBoxText.Equals("Municipio"))
+            {
+                MessageBox.Show("Error: No se ha seleccionado ningun municipio");
+            }
+            else
+            {
+                List<string[]> rowsDvg = c.FilterByMun(comboBoxText);
+
+                dgv.AllowUserToAddRows = false;
+                showGrid(rowsDvg);
+                this.Show();
+                this.BringToFront();
+            }
         }
 
         private void btnZona_Click(object sender, EventArgs e)
         {
-            //TODO GONZALO
+            string textBoxText = ZonaText.Text;
+
+            if (textBoxText.Equals("Zona Hidrografica"))
+            {
+                MessageBox.Show("Error: No se ha introducido ninguna zona hidrografica");
+            }
+            else
+            {
+                List<string[]> rowsDvg = c.FilterByZona(textBoxText);
+
+                dgv.AllowUserToAddRows = false;
+                showGrid(rowsDvg);
+                this.Show();
+                this.BringToFront();
+            }
         }
 
         private void btnTemperaturas_Click(object sender, EventArgs e)
