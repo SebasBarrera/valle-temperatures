@@ -34,6 +34,7 @@ namespace ValleTemperatures
             {
                 PointLatLng m = new PointLatLng(i[0], i[1]);
             }
+            SetMarkers();
         }
 
         private void SetMarkers()

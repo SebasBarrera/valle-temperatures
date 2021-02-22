@@ -55,6 +55,8 @@ namespace ValleTemperatures
             this.btnMunicipio = new System.Windows.Forms.Button();
             this.btnZona = new System.Windows.Forms.Button();
             this.btnTemperaturas = new System.Windows.Forms.Button();
+            this.BorrarFiltro = new System.Windows.Forms.Button();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroMax)).BeginInit();
@@ -263,11 +265,26 @@ namespace ValleTemperatures
             this.btnTemperaturas.UseVisualStyleBackColor = true;
             this.btnTemperaturas.Click += new System.EventHandler(this.btnTemperaturas_Click);
             // 
+            // BorrarFiltro
+            // 
+            this.BorrarFiltro.Location = new System.Drawing.Point(531, 516);
+            this.BorrarFiltro.Name = "BorrarFiltro";
+            this.BorrarFiltro.Size = new System.Drawing.Size(146, 58);
+            this.BorrarFiltro.TabIndex = 13;
+            this.BorrarFiltro.Text = "Borrar filtros";
+            this.BorrarFiltro.UseVisualStyleBackColor = true;
+            this.BorrarFiltro.Click += new System.EventHandler(this.BorrarFiltro_Click);
+            // 
+            // backgroundWorker3
+            // 
+            this.backgroundWorker3.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker3_DoWork);
+            // 
             // TableShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1281, 517);
+            this.ClientSize = new System.Drawing.Size(1281, 586);
+            this.Controls.Add(this.BorrarFiltro);
             this.Controls.Add(this.btnTemperaturas);
             this.Controls.Add(this.btnZona);
             this.Controls.Add(this.btnMunicipio);
@@ -319,6 +336,8 @@ namespace ValleTemperatures
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.Button BorrarFiltro;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
     }
 }
 

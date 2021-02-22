@@ -180,5 +180,15 @@ namespace ValleTemperatures
         {
             //TODO GONZALO
         }
+
+        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void BorrarFiltro_Click(object sender, EventArgs e)
+        {
+            //TODO GONZALO
+        }
     }
 }
