@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{A283E1D3-B7C5-4DE3-BF22-2A66D55FC3E4}|Default">
+  <MonoDevelop.Ide.ItemProperties.ValleTemperatures PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ui/TableShow.cs">
+    <Files>
+      <File FileName="ui/TableShow.cs" Line="172" Column="48" />
+      <File FileName="ui/TableShow.Designer.cs" Line="1" Column="1" />
+      <File FileName="ui/Control.cs" Line="72" Column="48" />
+      <File FileName="model/Controller.cs" Line="125" Column="28" />
+      <File FileName="model/Record.cs" Line="27" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ValleTemperatures" expanded="True">
+            <Node name="ValleTemperatures" expanded="True">
+              <Node name="model" expanded="True" />
+              <Node name="ui" expanded="True">
+                <Node name="TableShow.cs" expanded="True" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

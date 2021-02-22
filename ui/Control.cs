@@ -61,5 +61,16 @@ namespace ValleTemperatures.ui
         {
             return c.CandidadMunicipio();
         }
+
+        public List<string[]> FilterByMun(string comboBoxText)
+        {
+            return c.FilterByMun(comboBoxText);
+        }
+
+        public List<string[]> FilterByZona(string textBoxText)
+        {
+            return c.FilterByZona(textBoxText);
+        }
+
     }
 }

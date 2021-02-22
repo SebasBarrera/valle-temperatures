@@ -28,15 +28,21 @@ namespace ValleTemperatures.model
         public void AddRecord(Record rec)
         {
             Records.Add(rec);
+            AddRecord2Hashtables(rec);
+        }
+
+        public void AddRecord2Hashtables(Record rec)
+        {
+            
 
             int oneUnit = 1;
-            double[] arrayForAverage = {0,0};
+            double[] arrayForAverage = { 0, 0 };
 
             if (promedioTemperaturaPorMunicipio.ContainsKey(rec.Mun))
             {
                 //arrayForAverage[] = promedioTemperaturaPorMunicipio[rec.Mun];
 
-                object[] objArray= promedioTemperaturaPorMunicipio[rec.Mun] as object[];
+                object[] objArray = promedioTemperaturaPorMunicipio[rec.Mun] as object[];
 
                 if (objArray != null)
                 {
@@ -44,40 +50,118 @@ namespace ValleTemperatures.model
 
                     arrayForAverage[0] = arrayForAverage[0] + rec.Temperatura;
                     arrayForAverage[1] = arrayForAverage[1] + 1;
-                
+
                     promedioTemperaturaPorMunicipio[rec.Mun] = arrayForAverage;
                 }
 
-                
+
             }
             else
             {
                 arrayForAverage[0] = rec.Temperatura;
                 arrayForAverage[1] = 1;
-                promedioTemperaturaPorMunicipio.Add(rec.Mun , arrayForAverage);
+                promedioTemperaturaPorMunicipio.Add(rec.Mun, arrayForAverage);
             }
-            
+
 
             if (cantidadZonaHidrografica.ContainsKey(rec.Zona))
             {
-                cantidadZonaHidrografica[rec.Zona] = ((int) cantidadZonaHidrografica[rec.Zona]) + 1;
+                cantidadZonaHidrografica[rec.Zona] = ((int)cantidadZonaHidrografica[rec.Zona]) + 1;
             }
             else
             {
-                
+
                 cantidadZonaHidrografica.Add(rec.Zona, oneUnit);
             }
 
 
             if (cantidadRegistrosPorMunicipio.ContainsKey(rec.Mun))
             {
-                 cantidadRegistrosPorMunicipio[rec.Mun] = ((int) cantidadRegistrosPorMunicipio[rec.Mun]) + 1;
+                cantidadRegistrosPorMunicipio[rec.Mun] = ((int)cantidadRegistrosPorMunicipio[rec.Mun]) + 1;
             }
             else
             {
                 cantidadRegistrosPorMunicipio.Add(rec.Mun, oneUnit);
             }
         }
+
+       
+
+        public List<string[]> FilterByMun(string comboBoxText)
+        {
+            List<string[]> rowsDvg = new List<string[]>();
+            promedioTemperaturaPorMunicipio.Clear();
+            cantidadZonaHidrografica.Clear();
+            cantidadRegistrosPorMunicipio.Clear();
+
+            foreach (Record mun in Records)
+            {
+                string munName = mun.Mun;
+                if (munName.Equals(comboBoxText))
+                {
+                    string[] line = mun.TransformRecord2String();
+                    rowsDvg.Add(line);
+                    AddRecord2Hashtables(mun);
+                }
+            }
+
+
+
+            return rowsDvg;
+        }
+
+
+
+        public List<string[]> FilterByZona(string textBoxText)
+        {
+            List<string[]> rowsDvg = new List<string[]>();
+            promedioTemperaturaPorMunicipio.Clear();
+            cantidadZonaHidrografica.Clear();
+            cantidadRegistrosPorMunicipio.Clear();
+
+            foreach (Record mun in Records)
+            {
+                string munZona = mun.Zona;
+                if (munZona.Contains(textBoxText))
+                {
+                    string[] line = mun.TransformRecord2String();
+                    rowsDvg.Add(line);
+                    AddRecord2Hashtables(mun);
+                }
+            }
+
+
+
+            return rowsDvg;
+        }
+
+
+
+        public List<string[]> FilterByTempRange(string comboBoxText)
+        {
+            List<string[]> rowsDvg = new List<string[]>();
+            promedioTemperaturaPorMunicipio.Clear();
+            cantidadZonaHidrografica.Clear();
+            cantidadRegistrosPorMunicipio.Clear();
+
+            foreach (Record mun in Records)
+            {
+                string munName = mun.Mun;
+                if (munName.Equals(comboBoxText))
+                {
+                    string[] line = mun.TransformRecord2String();
+                    rowsDvg.Add(line);
+                    AddRecord2Hashtables(mun);
+                }
+            }
+
+
+
+            return rowsDvg;
+        }
+
+
+
 
         internal List<double[]> Coordenadas()
         {
