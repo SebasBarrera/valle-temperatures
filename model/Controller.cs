@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ValleTemperatures.model
 {
@@ -23,7 +21,7 @@ namespace ValleTemperatures.model
             cantidadRegistrosPorMunicipio = new Hashtable();
         }
 
-        
+
 
         public void AddRecord(Record rec)
         {
@@ -33,7 +31,7 @@ namespace ValleTemperatures.model
 
         public void AddRecord2Hashtables(Record rec)
         {
-            
+
 
             int oneUnit = 1;
             double[] arrayForAverage = { 0, 0 };
@@ -85,7 +83,7 @@ namespace ValleTemperatures.model
             }
         }
 
-       
+
 
         public List<string[]> FilterByMun(string comboBoxText)
         {
@@ -170,13 +168,13 @@ namespace ValleTemperatures.model
         internal List<double[]> Coordenadas()
         {
             List<double[]> datos = new List<double[]>();
-            
+
             for (int i = 0; i < 100; i++)
             {
                 double[] cor = new double[2];
                 cor[0] = Records.ElementAt(i).Lat;
                 cor[1] = Records.ElementAt(i).Lon;
-                
+
                 datos.Add(cor);
             }
             return datos;
@@ -228,6 +226,6 @@ namespace ValleTemperatures.model
             return datos;
         }
 
-        
+
     }
 }
