@@ -12,23 +12,25 @@ namespace ValleTemperatures
     {
 
         private List<PointLatLng> Markers;
-        private GMapOverlay MarkersOverlay;
+
+        private GMapOverlay MarkersOverlay = new GMapOverlay("markers");
 
         public MapShow(List<double[]> marks)
         {
             InitializeComponent();
             Markers = new List<PointLatLng>();
-            MarkersOverlay = new GMapOverlay("markers");
+            
             addMarkersToList(marks);
         }
 
-        private void addMarkersToList(List<double[]> marks)
+        private void GMap_Load(object sender, EventArgs e)
         {
-            foreach (double[] i in marks)
-            {
-                PointLatLng m = new PointLatLng(i[0], i[1]);
-            }
-            SetMarkers();
+            gmap.MapProvider = GoogleMapProvider.Instance;
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
+
+            gmap.Position = new PointLatLng(3.416667, -76.516667);
+
+            gmap.Overlays.Add(MarkersOverlay);
         }
 
         private void SetMarkers()
@@ -41,21 +43,24 @@ namespace ValleTemperatures
             }
         }
 
+        private void addMarkersToList(List<double[]> marks)
+        {
+            foreach (double[] i in marks)
+            {
+                Markers.Add(new PointLatLng(i[0], i[1]));
+            }
+            SetMarkers();
+        }
+
+        
+
         private void Cerrar(object sender, EventArgs e)
         {
             this.Hide();
             Markers.Clear();
         }
 
-        private void GMap_Load(object sender, EventArgs e)
-        {
-            gmap.MapProvider = GoogleMapProvider.Instance;
-            GMaps.Instance.Mode = AccessMode.ServerOnly;
-
-            gmap.Position = new PointLatLng(3.416667, -76.516667);
-            gmap.Overlays.Add(MarkersOverlay);
-
-        }
+        
 
         private void ocultar(object sender, EventArgs e)
         {
