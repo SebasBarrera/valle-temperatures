@@ -43,7 +43,7 @@ namespace ValleTemperatures.ui
 
         public List<double[]> Coordenadas()
         {
-            return c.Coordenadas();
+            return c.GetCoordenadas();
         }
 
         public List<string[]> RetrieveTempData()

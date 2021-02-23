@@ -103,7 +103,7 @@ namespace ValleTemperatures
             this.dgv.Name = "dgv";
             this.dgv.Size = new System.Drawing.Size(1245, 394);
             this.dgv.TabIndex = 3;
-             // 
+            // 
             // Cod
             // 
             this.Cod.HeaderText = "Codigo Estacion";
@@ -168,24 +168,24 @@ namespace ValleTemperatures
             // 
             this.MunicipioCombo.FormattingEnabled = true;
             this.MunicipioCombo.Items.AddRange(new object[] {
-            "Sevilla",
-            "Alcala",
-            "Cali",
-            "Buenaventura",
-            "Florida",
-            "Jamundi",
-            "Caicedona",
-            "Trujillo",
-            "Ginebra ",
-            "Palmira",
-            "Argerlia",
-            "La Cumbre",
-            "Cartago",
-            "Buga",
-            "Dagua",
-            "Restrepo",
+            "Alcalá",
             "Ansermanuevo",
-            "Tulua"});
+            "Argelia",
+            "Buenaventura",
+            "Buga",
+            "Caicedonia",
+            "Cali",
+            "Cartago",
+            "Cumbre",
+            "Dagua",
+            "Florida",
+            "Ginebra",
+            "Jamundí",
+            "Palmira",
+            "Restrepo",
+            "Sevilla",
+            "Trujillo",
+            "Tuluá"});
             this.MunicipioCombo.Location = new System.Drawing.Point(351, 36);
             this.MunicipioCombo.Name = "MunicipioCombo";
             this.MunicipioCombo.Size = new System.Drawing.Size(188, 21);

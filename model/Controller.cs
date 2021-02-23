@@ -9,6 +9,7 @@ namespace ValleTemperatures.model
     {
 
         List<Record> Records;
+        List<double[]> Coordenadas;
         Hashtable promedioTemperaturaPorMunicipio;
         Hashtable cantidadZonaHidrografica;
         Hashtable cantidadRegistrosPorMunicipio;
@@ -16,9 +17,15 @@ namespace ValleTemperatures.model
         public Controller()
         {
             Records = new List<Record>();
+            Coordenadas = new List<double[]>();
             promedioTemperaturaPorMunicipio = new Hashtable();
             cantidadZonaHidrografica = new Hashtable();
             cantidadRegistrosPorMunicipio = new Hashtable();
+        }
+
+        public List<double[]> GetCoordenadas() 
+        {
+            return Coordenadas;
         }
 
 
@@ -27,11 +34,12 @@ namespace ValleTemperatures.model
         {
             Records.Add(rec);
             AddRecord2Hashtables(rec);
+            AddRec2Coordenadas(rec);
         }
 
         public void AddRecord2Hashtables(Record rec)
         {
-
+            
 
             int oneUnit = 1;
             double[] arrayForAverage = { 0, 0 };
@@ -93,11 +101,17 @@ namespace ValleTemperatures.model
         public List<string[]> GetOriginalRecords()
         {
             List<string[]> dataString = new List<string[]>();
+            promedioTemperaturaPorMunicipio.Clear();
+            cantidadZonaHidrografica.Clear();
+            cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record rec in Records)
             {
                 string[] line = rec.TransformRecord2String();
                 dataString.Add(line);
+                AddRecord2Hashtables(rec);
+                AddRec2Coordenadas(rec);
             }
 
             return dataString;
@@ -109,6 +123,7 @@ namespace ValleTemperatures.model
             promedioTemperaturaPorMunicipio.Clear();
             cantidadZonaHidrografica.Clear();
             cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record mun in Records)
             {
@@ -118,6 +133,7 @@ namespace ValleTemperatures.model
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
                     AddRecord2Hashtables(mun);
+                    AddRec2Coordenadas(mun);
                 }
             }
 
@@ -134,6 +150,7 @@ namespace ValleTemperatures.model
             promedioTemperaturaPorMunicipio.Clear();
             cantidadZonaHidrografica.Clear();
             cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record mun in Records)
             {
@@ -147,6 +164,7 @@ namespace ValleTemperatures.model
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
                     AddRecord2Hashtables(mun);
+                    AddRec2Coordenadas(mun);
                 }
             }
 
@@ -163,6 +181,7 @@ namespace ValleTemperatures.model
             promedioTemperaturaPorMunicipio.Clear();
             cantidadZonaHidrografica.Clear();
             cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record mun in Records)
             {
@@ -172,6 +191,7 @@ namespace ValleTemperatures.model
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
                     AddRecord2Hashtables(mun);
+                    AddRec2Coordenadas(mun);
                 }
 
                
@@ -184,21 +204,15 @@ namespace ValleTemperatures.model
 
 
 
-
-        internal List<double[]> Coordenadas()
+        public void AddRec2Coordenadas(Record rec) 
         {
-            List<double[]> datos = new List<double[]>();
-
-            for (int i = 0; i < 100; i++)
-            {
-                double[] cor = new double[2];
-                cor[0] = Records.ElementAt(i).Lat;
-                cor[1] = Records.ElementAt(i).Lon;
-
-                datos.Add(cor);
-            }
-            return datos;
+            double[] cor = new double[2];
+            cor[0] = rec.Lat;
+            cor[1] = rec.Lon;
+            Coordenadas.Add(cor);
         }
+
+
 
         public List<string[]> CandidadMunicipio()
         {
