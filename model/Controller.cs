@@ -8,19 +8,14 @@ namespace ValleTemperatures.model
     class Controller
     {
 
-<<<<<<< HEAD
+
         public List<Record> Records { get; set; }
         public Hashtable promedioTemperaturaPorMunicipio { get; set; }
+        public List<double[]> Coordenadas { get; set; }
         public Hashtable cantidadZonaHidrografica { get; set; }
         public Hashtable cantidadRegistrosPorMunicipio { get; set; }
-=======
-        List<Record> Records;
-        List<double[]> Coordenadas;
-        Hashtable promedioTemperaturaPorMunicipio;
-        Hashtable cantidadZonaHidrografica;
-        Hashtable cantidadRegistrosPorMunicipio;
->>>>>>> 82f2245817119800348eb5d994e6c31190f4b92d
 
+       
         public Controller()
         {
             Records = new List<Record>();
@@ -211,12 +206,9 @@ namespace ValleTemperatures.model
 
 
 
-<<<<<<< HEAD
 
-        public List<double[]> Coordenadas()
-=======
         public void AddRec2Coordenadas(Record rec) 
->>>>>>> 82f2245817119800348eb5d994e6c31190f4b92d
+
         {
             double[] cor = new double[2];
             cor[0] = rec.Lat;
@@ -224,25 +216,8 @@ namespace ValleTemperatures.model
             Coordenadas.Add(cor);
         }
 
-<<<<<<< HEAD
-            for (int i = 0; i < 500; i++)
-            {
-                
-                double[] cor = new double[2];
-                cor[0] = Records.ElementAt(i).Lat;
-                cor[1] = Records.ElementAt(i).Lon;
-                
-                if (!datos.Contains(cor))
-                {
-                    datos.Add(cor);
-                }
-            }
-            return datos;
-        }
-=======
-
->>>>>>> 82f2245817119800348eb5d994e6c31190f4b92d
-
+           
+    
         public List<string[]> CandidadMunicipio()
         {
             List<string[]> datos = new List<string[]>();
