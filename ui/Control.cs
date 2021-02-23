@@ -26,6 +26,9 @@ namespace ValleTemperatures.ui
                     c.AddRecord(newRecord);
                     rowsList.Add(values);
                 }
+                c.ShowHashT();
+                
+                
             }
             catch (Exception ex)
             {

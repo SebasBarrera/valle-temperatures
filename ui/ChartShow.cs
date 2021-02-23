@@ -39,7 +39,7 @@ namespace ValleTemperatures.ui
                     MessageBox.Show("Temperatura promedio por municipio" + i[1] + i[0]);
                     count++;
                 }
-                double a = Convert.ToDouble(i[0], CultureInfo.InvariantCulture);
+                double a = Convert.ToDouble(i[0]); //removi ", CultureInfo.InvariantCulture" del parametro
                 var separator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
                 string b = Regex.Replace(i[0], "[.,]", separator);
                 chart1.Series["Temperatura promedio"].Points.AddXY(i[1], a);
@@ -76,5 +76,9 @@ namespace ValleTemperatures.ui
             this.Hide();
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

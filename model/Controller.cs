@@ -38,13 +38,13 @@ namespace ValleTemperatures.model
 
             if (promedioTemperaturaPorMunicipio.ContainsKey(rec.Mun))
             {
-                //arrayForAverage[] = promedioTemperaturaPorMunicipio[rec.Mun];
+                
 
-                object[] objArray = promedioTemperaturaPorMunicipio[rec.Mun] as object[];
+                object objArray = promedioTemperaturaPorMunicipio[rec.Mun];
 
                 if (objArray != null)
                 {
-                    arrayForAverage = objArray.OfType<double>().ToArray();
+                    arrayForAverage = (double[])objArray;
 
                     arrayForAverage[0] = arrayForAverage[0] + rec.Temperatura;
                     arrayForAverage[1] = arrayForAverage[1] + 1;
@@ -83,7 +83,12 @@ namespace ValleTemperatures.model
             }
         }
 
-       
+        public Hashtable ShowHashT()
+        {
+            return promedioTemperaturaPorMunicipio;
+        }
+
+
 
         public List<string[]> GetOriginalRecords()
         {
@@ -219,7 +224,8 @@ namespace ValleTemperatures.model
                 double[] temperaturas = (double[]) i.Value;
                 double a = temperaturas[0];
                 double b = temperaturas[1];
-                dato[0] = a/b + "";
+                double c = a / b;
+                dato[0] = c.ToString();
                 dato[1] = i.Key.ToString();
                 Console.WriteLine(dato[1]);
                 datos.Add(dato);
