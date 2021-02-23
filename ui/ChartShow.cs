@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ValleTemperatures.ui
@@ -12,9 +14,9 @@ namespace ValleTemperatures.ui
 
             chart1.Titles.Add("Temperatura promedio por municipio");
             chart2.Titles.Add("Cantidad de municipios por zona hidrografica");
-            chart1.Titles.Add("Cantidad de registros de temperatura por municipio");
+            chart3.Titles.Add("Cantidad de registros de temperatura por municipio");
 
-            chart1.Series["puntos"].IsValueShownAsLabel = true;
+            chart1.Series["Temperatura promedio"].IsValueShownAsLabel = true;
             chart2.Series["pie"].IsValueShownAsLabel = true;
             chart3.Series["barras"].IsValueShownAsLabel = true;
 
@@ -37,7 +39,10 @@ namespace ValleTemperatures.ui
                     MessageBox.Show("Temperatura promedio por municipio" + i[1] + i[0]);
                     count++;
                 }
-                chart1.Series["puntos"].Points.AddXY(i[0], i[1]);
+                double a = Convert.ToDouble(i[0], CultureInfo.InvariantCulture);
+                var separator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+                string b = Regex.Replace(i[0], "[.,]", separator);
+                chart1.Series["Temperatura promedio"].Points.AddXY(i[1], a);
             }
         }
         private void Pie(List<string[]> info) //info[0] cantidad, info[1] Zona Hidrografica

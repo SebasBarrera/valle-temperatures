@@ -201,9 +201,11 @@ namespace ValleTemperatures.model
             foreach (DictionaryEntry i in promedioTemperaturaPorMunicipio)
             {
                 string[] dato = new string[2];
-
-                dato[0] = (string)i.Key;
-                dato[1] = i.Value + "";
+                double[] temperaturas = (double[]) i.Value;
+                double a = temperaturas[0];
+                double b = temperaturas[1];
+                dato[0] = a/b + "";
+                dato[1] = i.Key.ToString();
                 Console.WriteLine(dato[1]);
                 datos.Add(dato);
             }
