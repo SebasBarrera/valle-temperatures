@@ -97,7 +97,7 @@ namespace ValleTemperatures.model
             foreach (Record mun in Records)
             {
                 string munName = mun.Mun;
-                if (munName.Equals(comboBoxText))
+                if (munName.Equals(comboBoxText, StringComparison.InvariantCultureIgnoreCase))
                 {
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
