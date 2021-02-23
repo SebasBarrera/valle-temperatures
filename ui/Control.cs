@@ -10,8 +10,6 @@ namespace ValleTemperatures.ui
     class Control
     {
 
-
-
         private Controller c = new Controller();
 
         public List<string[]> LoadData(string path)

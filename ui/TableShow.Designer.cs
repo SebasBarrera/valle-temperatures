@@ -103,8 +103,7 @@ namespace ValleTemperatures
             this.dgv.Name = "dgv";
             this.dgv.Size = new System.Drawing.Size(1245, 394);
             this.dgv.TabIndex = 3;
-            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick_2);
-            // 
+             // 
             // Cod
             // 
             this.Cod.HeaderText = "Codigo Estacion";
@@ -224,7 +223,6 @@ namespace ValleTemperatures
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Filtros";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -275,10 +273,6 @@ namespace ValleTemperatures
             this.BorrarFiltro.UseVisualStyleBackColor = true;
             this.BorrarFiltro.Click += new System.EventHandler(this.BorrarFiltro_Click);
             // 
-            // backgroundWorker3
-            // 
-            this.backgroundWorker3.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker3_DoWork);
-            // 
             // TableShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,7 +293,6 @@ namespace ValleTemperatures
             this.Controls.Add(this.button1);
             this.Name = "TableShow";
             this.Text = "ChartShow";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroMax)).EndInit();

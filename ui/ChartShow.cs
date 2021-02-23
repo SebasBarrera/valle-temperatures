@@ -71,17 +71,6 @@ namespace ValleTemperatures.ui
                 chart3.Series["barras"].Points.AddXY(i[0], i[1]);
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Chart2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -82,7 +82,6 @@ namespace ValleTemperatures.ui
             this.chart2.Size = new System.Drawing.Size(300, 300);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "Cantidad de municipios por zona hidrografica";
-            this.chart2.Click += new System.EventHandler(this.Chart2_Click);
             // 
             // chart3
             // 
@@ -121,7 +120,6 @@ namespace ValleTemperatures.ui
             this.Controls.Add(this.chart1);
             this.Name = "ChartShow";
             this.Text = "ChartShow";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();

@@ -103,7 +103,6 @@ namespace ValleTemperatures
             this.Controls.Add(this.gmap);
             this.Name = "MapShow";
             this.Text = "MapShow";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }

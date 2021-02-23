@@ -9,9 +9,6 @@ namespace ValleTemperatures
 {
     public partial class TableShow : Form
     {
-
-
-
         private Control c = new Control();
         public TableShow()
         {
@@ -19,16 +16,8 @@ namespace ValleTemperatures
             LoadData();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LoadData()
         {
-
-
-
             OpenFileDialog fileExplorer = new OpenFileDialog();
             if (fileExplorer.ShowDialog() == DialogResult.OK)
             {
@@ -85,52 +74,21 @@ namespace ValleTemperatures
 
                 }
 
-
-
-
             }
         }
 
         private void ShowMap(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha generado el mapa con los sensores");
-
             MapShow map = new MapShow(c.Coordenadas());
             map.Show();
+            MessageBox.Show("Se ha generado el mapa con los sensores");
         }
 
         private void ShowCharts(object sender, EventArgs e)
         {
-            MessageBox.Show("Se han generado las graficas");
-
-
             ChartShow chart = new ChartShow(c.RetrieveTempData(), c.RetrieveZonaData(), c.RetrieveCantidadData());
             chart.Show();
-        }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgv_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgv_ControlAdded(object sender, ControlEventArgs e)
-        {
-
-        }
-
-        private void dgv_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Se han generado las graficas");
         }
 
         private void btnMunicipio_Click(object sender, EventArgs e)
@@ -183,11 +141,6 @@ namespace ValleTemperatures
             this.Show();
             this.BringToFront();
             
-        }
-
-        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
-        {
-
         }
 
         private void BorrarFiltro_Click(object sender, EventArgs e)

@@ -41,13 +41,6 @@ namespace ValleTemperatures
             }
         }
 
-
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Cerrar(object sender, EventArgs e)
         {
             this.Hide();
