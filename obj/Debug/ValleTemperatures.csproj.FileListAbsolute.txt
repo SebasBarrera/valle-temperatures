@@ -13,3 +13,16 @@ C:\Users\Sebastián\source\repos\ValleTemperatures\ValleTemperatures\obj\Debug\V
 C:\Users\Sebastián\source\repos\ValleTemperatures\ValleTemperatures\obj\Debug\ValleTemperatures.csproj.CopyComplete
 C:\Users\Sebastián\source\repos\ValleTemperatures\ValleTemperatures\obj\Debug\ValleTemperatures.exe
 C:\Users\Sebastián\source\repos\ValleTemperatures\ValleTemperatures\obj\Debug\ValleTemperatures.pdb
+C:\Users\estudiante\Documents\valle\valle-temperatures\bin\Debug\ValleTemperatures.exe.config
+C:\Users\estudiante\Documents\valle\valle-temperatures\bin\Debug\ValleTemperatures.exe
+C:\Users\estudiante\Documents\valle\valle-temperatures\bin\Debug\ValleTemperatures.pdb
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.csprojAssemblyReference.cache
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.Properties.Resources.resources
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.ui.ChartShow.resources
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.TableShow.resources
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.MapShow.resources
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.csproj.GenerateResource.cache
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.csproj.CoreCompileInputs.cache
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.csproj.CopyComplete
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.exe
+C:\Users\estudiante\Documents\valle\valle-temperatures\obj\Debug\ValleTemperatures.pdb

@@ -48,7 +48,7 @@ namespace ValleTemperatures
                         List<string[]> rowsDvg = c.LoadData(absolutePathFile);
                        
                         dgv.AllowUserToAddRows = false;
-                        showGrid(rowsDvg);
+                        ShowGrid(rowsDvg);
                         this.Show();
                         this.BringToFront();
 
@@ -70,7 +70,7 @@ namespace ValleTemperatures
             }
         }
 
-        private void showGrid(List<string[]> rowsDvg)
+        private void ShowGrid(List<string[]> rowsDvg)
         {
             dgv.Rows.Clear();
            
@@ -151,7 +151,7 @@ namespace ValleTemperatures
                 List<string[]> rowsDvg = c.FilterByMun(comboBoxText);
 
                 dgv.AllowUserToAddRows = false;
-                showGrid(rowsDvg);
+                ShowGrid(rowsDvg);
                 this.Show();
                 this.BringToFront();
             }
@@ -170,7 +170,7 @@ namespace ValleTemperatures
                 List<string[]> rowsDvg = c.FilterByZona(textBoxText);
 
                 dgv.AllowUserToAddRows = false;
-                showGrid(rowsDvg);
+                ShowGrid(rowsDvg);
                 this.Show();
                 this.BringToFront();
             }

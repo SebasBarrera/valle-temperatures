@@ -122,6 +122,10 @@ namespace ValleTemperatures.model
             foreach (Record mun in Records)
             {
                 string munZona = mun.Zona;
+                munZona = munZona.ToUpper();
+
+                textBoxText = textBoxText.ToUpper();
+
                 if (munZona.Contains(textBoxText))
                 {
                     string[] line = mun.TransformRecord2String();
@@ -223,5 +227,7 @@ namespace ValleTemperatures.model
 
             return datos;
         }
+
+        
     }
 }

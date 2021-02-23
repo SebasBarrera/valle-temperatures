@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -25,8 +26,9 @@ namespace ValleTemperatures.ui
                      string[] lines = File.ReadAllLines(path);
                      for (int i = 0; i <5000; i++)
                      {
-                         string[] values = lines[i].Split(','); 
-                         Record newRecord = new Record(values[0], values[1], values[2], Convert.ToDouble(values[3]), values[4], values[5], values[6], values[7], Convert.ToDouble(values[8]), Convert.ToDouble(values[9]), values[10], values[11]);
+                         string[] values = lines[i].Split(',');
+  
+                         Record newRecord = new Record(values[0], values[1], values[2], Convert.ToDouble(values[3], CultureInfo.InvariantCulture), values[4], values[5], values[6], values[7], Convert.ToDouble(values[8], CultureInfo.InvariantCulture), Convert.ToDouble(values[9], CultureInfo.InvariantCulture), values[10], values[11]);
                          c.AddRecord(newRecord);
                          rowsList.Add(values);
                      }
