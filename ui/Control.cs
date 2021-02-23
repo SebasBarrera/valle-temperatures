@@ -70,5 +70,14 @@ namespace ValleTemperatures.ui
             return c.FilterByZona(textBoxText);
         }
 
+        public List<string[]> FilterByRange(double minValue, double maxValue)
+        {
+            return c.FilterByRange(minValue, maxValue);
+        }
+
+        public List<string[]> GetOriginalRecords()
+        {
+            return c.GetOriginalRecords();
+        }
     }
 }

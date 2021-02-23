@@ -83,7 +83,20 @@ namespace ValleTemperatures.model
             }
         }
 
+       
 
+        public List<string[]> GetOriginalRecords()
+        {
+            List<string[]> dataString = new List<string[]>();
+
+            foreach (Record rec in Records)
+            {
+                string[] line = rec.TransformRecord2String();
+                dataString.Add(line);
+            }
+
+            return dataString;
+        }
 
         public List<string[]> FilterByMun(string comboBoxText)
         {
@@ -139,7 +152,7 @@ namespace ValleTemperatures.model
 
 
 
-        public List<string[]> FilterByTempRange(string comboBoxText)
+        public List<string[]> FilterByRange(double minValue, double maxValue)
         {
             List<string[]> rowsDvg = new List<string[]>();
             promedioTemperaturaPorMunicipio.Clear();
@@ -148,13 +161,15 @@ namespace ValleTemperatures.model
 
             foreach (Record mun in Records)
             {
-                string munName = mun.Mun;
-                if (munName.Equals(comboBoxText))
+
+                if ((mun.Temperatura >= minValue) && (mun.Temperatura <= maxValue))
                 {
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
                     AddRecord2Hashtables(mun);
                 }
+
+               
             }
 
 
