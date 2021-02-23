@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ValleTemperatures.ui;
 using Control = ValleTemperatures.ui.Control;
@@ -15,9 +10,9 @@ namespace ValleTemperatures
     public partial class TableShow : Form
     {
 
-        
 
-        private  Control c = new Control();
+
+        private Control c = new Control();
         public TableShow()
         {
             InitializeComponent();
@@ -31,8 +26,8 @@ namespace ValleTemperatures
 
         private void LoadData()
         {
-            
-          
+
+
 
             OpenFileDialog fileExplorer = new OpenFileDialog();
             if (fileExplorer.ShowDialog() == DialogResult.OK)
@@ -40,13 +35,13 @@ namespace ValleTemperatures
                 try
                 {
                     string absolutePathFile = fileExplorer.FileName;
-                   
+
 
                     if (absolutePathFile.Contains(".csv"))
                     {
-                        
+
                         List<string[]> rowsDvg = c.LoadData(absolutePathFile);
-                       
+
                         dgv.AllowUserToAddRows = false;
                         ShowGrid(rowsDvg);
                         this.Show();
@@ -56,7 +51,7 @@ namespace ValleTemperatures
                     else
                     {
                         MessageBox.Show("Error, no se puede leer el archivo seleccionado.");
-                       
+
                     }
 
 
@@ -73,17 +68,17 @@ namespace ValleTemperatures
         private void ShowGrid(List<string[]> rowsDvg)
         {
             dgv.Rows.Clear();
-           
+
             foreach (string[] line in rowsDvg)
             {
 
                 DataGridViewRow dataGridViewRow = new DataGridViewRow();
                 dataGridViewRow.CreateCells(dgv);
-                
-                for (int i = 0; i<12; i++) 
+
+                for (int i = 0; i < 12; i++)
                 {
                     dataGridViewRow.Cells[i].Value = line[i];
-                    if (i==11)
+                    if (i == 11)
                     {
                         dgv.Rows.Add(dataGridViewRow);
                     }
@@ -91,7 +86,7 @@ namespace ValleTemperatures
                 }
 
 
-               
+
 
             }
         }
