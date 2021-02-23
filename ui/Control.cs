@@ -30,6 +30,9 @@ namespace ValleTemperatures.ui
                     c.AddRecord(newRecord);
                     rowsList.Add(values);
                 }
+                c.ShowHashT();
+                
+                
             }
             catch (Exception ex)
             {
@@ -44,7 +47,7 @@ namespace ValleTemperatures.ui
 
         public List<double[]> Coordenadas()
         {
-            return c.Coordenadas();
+            return c.GetCoordenadas();
         }
 
         public List<string[]> RetrieveTempData()

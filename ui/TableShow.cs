@@ -54,6 +54,8 @@ namespace ValleTemperatures
             }
         }
 
+    
+
         private void ShowGrid(List<string[]> rowsDvg)
         {
             dgv.Rows.Clear();

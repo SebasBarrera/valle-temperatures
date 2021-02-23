@@ -8,17 +8,31 @@ namespace ValleTemperatures.model
     class Controller
     {
 
+<<<<<<< HEAD
         public List<Record> Records { get; set; }
         public Hashtable promedioTemperaturaPorMunicipio { get; set; }
         public Hashtable cantidadZonaHidrografica { get; set; }
         public Hashtable cantidadRegistrosPorMunicipio { get; set; }
+=======
+        List<Record> Records;
+        List<double[]> Coordenadas;
+        Hashtable promedioTemperaturaPorMunicipio;
+        Hashtable cantidadZonaHidrografica;
+        Hashtable cantidadRegistrosPorMunicipio;
+>>>>>>> 82f2245817119800348eb5d994e6c31190f4b92d
 
         public Controller()
         {
             Records = new List<Record>();
+            Coordenadas = new List<double[]>();
             promedioTemperaturaPorMunicipio = new Hashtable();
             cantidadZonaHidrografica = new Hashtable();
             cantidadRegistrosPorMunicipio = new Hashtable();
+        }
+
+        public List<double[]> GetCoordenadas() 
+        {
+            return Coordenadas;
         }
 
 
@@ -27,24 +41,25 @@ namespace ValleTemperatures.model
         {
             Records.Add(rec);
             AddRecord2Hashtables(rec);
+            AddRec2Coordenadas(rec);
         }
 
         public void AddRecord2Hashtables(Record rec)
         {
-
+            
 
             int oneUnit = 1;
             double[] arrayForAverage = { 0, 0 };
 
             if (promedioTemperaturaPorMunicipio.ContainsKey(rec.Mun))
             {
-                //arrayForAverage[] = promedioTemperaturaPorMunicipio[rec.Mun];
+                
 
-                object[] objArray = promedioTemperaturaPorMunicipio[rec.Mun] as object[];
+                object objArray = promedioTemperaturaPorMunicipio[rec.Mun];
 
                 if (objArray != null)
                 {
-                    arrayForAverage = objArray.OfType<double>().ToArray();
+                    arrayForAverage = (double[])objArray;
 
                     arrayForAverage[0] = arrayForAverage[0] + rec.Temperatura;
                     arrayForAverage[1] = arrayForAverage[1] + 1;
@@ -83,16 +98,27 @@ namespace ValleTemperatures.model
             }
         }
 
-       
+        public Hashtable ShowHashT()
+        {
+            return promedioTemperaturaPorMunicipio;
+        }
+
+
 
         public List<string[]> GetOriginalRecords()
         {
             List<string[]> dataString = new List<string[]>();
+            promedioTemperaturaPorMunicipio.Clear();
+            cantidadZonaHidrografica.Clear();
+            cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record rec in Records)
             {
                 string[] line = rec.TransformRecord2String();
                 dataString.Add(line);
+                AddRecord2Hashtables(rec);
+                AddRec2Coordenadas(rec);
             }
 
             return dataString;
@@ -104,6 +130,7 @@ namespace ValleTemperatures.model
             promedioTemperaturaPorMunicipio.Clear();
             cantidadZonaHidrografica.Clear();
             cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record mun in Records)
             {
@@ -113,6 +140,7 @@ namespace ValleTemperatures.model
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
                     AddRecord2Hashtables(mun);
+                    AddRec2Coordenadas(mun);
                 }
             }
 
@@ -129,6 +157,7 @@ namespace ValleTemperatures.model
             promedioTemperaturaPorMunicipio.Clear();
             cantidadZonaHidrografica.Clear();
             cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record mun in Records)
             {
@@ -142,6 +171,7 @@ namespace ValleTemperatures.model
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
                     AddRecord2Hashtables(mun);
+                    AddRec2Coordenadas(mun);
                 }
             }
 
@@ -158,6 +188,7 @@ namespace ValleTemperatures.model
             promedioTemperaturaPorMunicipio.Clear();
             cantidadZonaHidrografica.Clear();
             cantidadRegistrosPorMunicipio.Clear();
+            Coordenadas.Clear();
 
             foreach (Record mun in Records)
             {
@@ -167,6 +198,7 @@ namespace ValleTemperatures.model
                     string[] line = mun.TransformRecord2String();
                     rowsDvg.Add(line);
                     AddRecord2Hashtables(mun);
+                    AddRec2Coordenadas(mun);
                 }
 
                
@@ -179,11 +211,20 @@ namespace ValleTemperatures.model
 
 
 
+<<<<<<< HEAD
 
         public List<double[]> Coordenadas()
+=======
+        public void AddRec2Coordenadas(Record rec) 
+>>>>>>> 82f2245817119800348eb5d994e6c31190f4b92d
         {
-            List<double[]> datos = new List<double[]>();
+            double[] cor = new double[2];
+            cor[0] = rec.Lat;
+            cor[1] = rec.Lon;
+            Coordenadas.Add(cor);
+        }
 
+<<<<<<< HEAD
             for (int i = 0; i < 500; i++)
             {
                 
@@ -198,6 +239,9 @@ namespace ValleTemperatures.model
             }
             return datos;
         }
+=======
+
+>>>>>>> 82f2245817119800348eb5d994e6c31190f4b92d
 
         public List<string[]> CandidadMunicipio()
         {
@@ -223,7 +267,8 @@ namespace ValleTemperatures.model
                 double[] temperaturas = (double[]) i.Value;
                 double a = temperaturas[0];
                 double b = temperaturas[1];
-                dato[0] = a/b + "";
+                double c = a / b;
+                dato[0] = c.ToString();
                 dato[1] = i.Key.ToString();
                 Console.WriteLine(dato[1]);
                 datos.Add(dato);
