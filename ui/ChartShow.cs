@@ -52,7 +52,7 @@ namespace ValleTemperatures.ui
             {
                 if (count == 1)
                 {
-                    MessageBox.Show("Cantidad de municipios por zona hidrografica" + i[1] + i[0]);
+                    MessageBox.Show("Cantidad de registros por zona hidrografica" + i[1] + i[0]);
                     count++;
                 }
                 chart2.Series["pie"].Points.AddXY(i[0], i[1]);
