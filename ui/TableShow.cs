@@ -173,7 +173,16 @@ namespace ValleTemperatures
 
         private void btnTemperaturas_Click(object sender, EventArgs e)
         {
-            //TODO GONZALO
+            double minValue = Decimal.ToDouble(numeroMin.Value);
+            double maxValue = Decimal.ToDouble(numeroMax.Value);
+
+            List<string[]> rowsDvg = c.FilterByRange(minValue, maxValue);
+
+            dgv.AllowUserToAddRows = false;
+            ShowGrid(rowsDvg);
+            this.Show();
+            this.BringToFront();
+            
         }
 
         private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
@@ -183,7 +192,12 @@ namespace ValleTemperatures
 
         private void BorrarFiltro_Click(object sender, EventArgs e)
         {
-            //TODO GONZALO
+            List<string[]> rowsDvg = c.GetOriginalRecords();
+
+            dgv.AllowUserToAddRows = false;
+            ShowGrid(rowsDvg);
+            this.Show();
+            this.BringToFront();
         }
     }
 }
