@@ -64,7 +64,6 @@ namespace ValleTemperatures.ui
             this.chart1.Size = new System.Drawing.Size(642, 300);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "Temperatura promedio por municipio";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // chart2
             // 

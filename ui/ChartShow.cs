@@ -6,9 +6,7 @@ using System.Windows.Forms;
 
 namespace ValleTemperatures.ui
 {
-    [System.ComponentModel.Bindable(true)]
-    [System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.IntervalType))]
-    public partial class ChartShow : Form
+   public partial class ChartShow : Form
     {
         public ChartShow(List<string[]> info1, List<string[]> info2, List<string[]> info3) // info1 temperatura por municipio, info2 zona hidrografica, info3 cantidad sensores por municipio
         {
@@ -38,9 +36,7 @@ namespace ValleTemperatures.ui
             foreach (string[] i in info)
             {
                 i[0] = i[0].Substring(0, 5);
-                double a = Convert.ToDouble(i[0]); //removi ", CultureInfo.InvariantCulture" del parametro
-                var separator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
-                string b = Regex.Replace(i[0], "[.,]", separator);
+                double a = Convert.ToDouble(i[0]); 
                 chart1.Series["Temperatura promedio"].Points.AddXY(i[1], a);
             }
         }
@@ -67,9 +63,6 @@ namespace ValleTemperatures.ui
             this.Hide();
         }
 
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }
