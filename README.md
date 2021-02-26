@@ -45,8 +45,8 @@
       </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#psp">Personal Software Process</a></li>
-    <li><a href="#requirements">Software Requirements Specifications</a></li>
+    <li><a href="#personal-software-process">Personal Software Process</a></li>
+    <li><a href="#software-requirements-specifications">Software Requirements Specifications</a></li>
     <li><a href="#video">Video</a></li>
     <li><a href="#contributors">Contributors</a></li>
   </ol>
