@@ -13,7 +13,7 @@ namespace ValleTemperatures.ui
             InitializeComponent();
 
             chart1.Titles.Add("Temperatura promedio por municipio");
-            chart2.Titles.Add("Cantidad de municipios por zona hidrografica");
+            chart2.Titles.Add("Cantidad de registros por zona hidrografica");
             chart3.Titles.Add("Cantidad de registros de temperatura por municipio");
             chart1.Series["Temperatura promedio"].IsValueShownAsLabel = true;
             chart2.Series["pie"].IsValueShownAsLabel = true;
