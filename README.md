@@ -3,7 +3,7 @@
 *** https://github.com/othneildrew/Best-README-Template
 -->
 
-[![Contributors](/../images/cobtributorsShield.jpeg?raw=true "Principal Screen")][contributors-url]
+[![Contributors](https://github.com/SebasBarrera/valle-temperatures/blob/master/images/contributorsShield.jpeg?raw=true "Principal Screen")][contributors-url]
 
 
 
@@ -54,7 +54,7 @@
 
 ## About The Project
 
-[![Principal Screen]](/../images/tableview.jpg?raw=true "Principal Screen")
+![Principal Screen](https://github.com/SebasBarrera/valle-temperatures/blob/master/images/tableview.jpeg?raw=true "Principal Screen")
 
 This will be the first screen you see after you choose the dataset
 Here: 
@@ -63,8 +63,8 @@ Here:
 * You can open an other window with a map with all -or filtered- sensors points distributed around all the department
 * You can open an other window with three (3) charts comparing some information from all dataset -or filtered-
 
-[![Map Screen]](/../images/map.jpg?raw=true "Map Screen")
-[![Chart Screen]](/../images/chart.jpg?raw=true "Chart Screen")
+![Map Screen](https://github.com/SebasBarrera/valle-temperatures/blob/master/images/map.jpeg?raw=true "Map Screen")
+![Chart Screen](https://github.com/SebasBarrera/valle-temperatures/blob/master/images/chart.jpeg?raw=true "Chart Screen")
 
 ### Built With
 
