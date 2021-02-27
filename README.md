@@ -46,7 +46,7 @@
     </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#personal-software-process">Personal Software Process</a></li>
-    <li><a href="#software-requirements-specifications">Software Requirements Specifications</a></li>
+    <li><a href="#ingineering-method">Ingineering Method</a></li>
     <li><a href="#video">Video</a></li>
     <li><a href="#contributors">Contributors</a></li>
   </ol>
@@ -100,7 +100,14 @@ Here we have our <a href="https://github.com/SebasBarrera/valle-temperatures/tre
 
 ## Software Requirements Specifications
 
-These are our <a href="https://github.com/SebasBarrera/valle-temperatures/blob/master/docs/RFS.docx">Functional Requirements</a> for this project
+Here we have our <a href="https://github.com/SebasBarrera/valle-temperatures/blob/master/docs/RFS.docx">Engineering Method</a> for this project
+In this document you can find :
+* The problem identification
+* Collection of the necessary information
+* Search for creative solutions
+* Transition from formulation of ideas to preliminary designs
+* Evaluation and selection of the best solution
+* Functional requirements
 
 ## Video
 
